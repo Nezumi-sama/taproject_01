@@ -14,7 +14,7 @@ public class CashBackHackerTest {
         int actual = cashBackHacker.remain(amount);
         int expected = 950;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
 
@@ -26,7 +26,7 @@ public class CashBackHackerTest {
         int actual = cashBackHacker.remain(amount);
         int expected = 0;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
     @Test
     public void remainAmountRemainsMultiple1000() {
@@ -36,10 +36,8 @@ public class CashBackHackerTest {
         int actual = cashBackHacker.remain(amount);
         int expected = 0;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
-
-
 
 
 
