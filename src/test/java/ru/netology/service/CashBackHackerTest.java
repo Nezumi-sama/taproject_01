@@ -7,39 +7,37 @@ import static org.junit.jupiter.api.Assertions.*;
 class CashBackHackerTest {
 
     @Test
-    public void remainAmount0() {
+    public void remainAmountRemainsNotMultiple1000() {
         CashBackHacker cashBackHacker = new CashBackHacker();
-        int amount = 0;
-
-        int actual = cashBackHacker.remain(amount);
-        int expected = 1000;
-
-        assertEquals(actual, expected);
-    }
-
-    @Test
-    public void remainAmountRemains0() {
-        CashBackHacker cashBackHacker = new CashBackHacker();
-        int amount = 2000;
-
-        int actual = cashBackHacker.remain(amount);
-        int expected = 1000;
-
-        assertEquals(actual, expected);
-    }
-
-    @Test
-    public void remainAmountRemainsNot0() {
-        CashBackHacker cashBackHacker = new CashBackHacker();
-        int amount = 1050;
+        int amount = 2050;
 
         int actual = cashBackHacker.remain(amount);
         int expected = 950;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
+
     @Test
-    void remain() {
+    public void remainAmountRemains1000() {
+        CashBackHacker cashBackHacker = new CashBackHacker();
+        int amount = 1000;
+
+        int actual = cashBackHacker.remain(amount);
+        int expected = 0;
+
+        assertEquals(expected, actual);
     }
+    @Test
+    public void remainAmountRemainsMultiple1000() {
+        CashBackHacker cashBackHacker = new CashBackHacker();
+        int amount = 5000;
+
+        int actual = cashBackHacker.remain(amount);
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+
 }
